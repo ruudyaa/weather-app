@@ -15,6 +15,13 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+// function getForecast(coordinates) {
+//   console.log(coordinates);
+//   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+//   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+//   console.log(apiUrl);
+// }
+
 function showTemperature(response) {
   document.querySelector("#cityShown").innerHTML = response.data.name;
   document.querySelector("#cityFirst").innerHTML = response.data.name;
@@ -45,6 +52,7 @@ function showTemperature(response) {
   document.querySelector("#date").innerHTML = formatDate(
     response.data.dt * 1000
   );
+  console.log(response.data);
 
   document
     .querySelector("#icon")
@@ -55,6 +63,8 @@ function showTemperature(response) {
 
   celciusTemperature = Math.round(response.data.main.temp);
 }
+
+// getForecast(response.data.coord);
 
 function searchCity(city) {
   // var apiKey = "98837ed6c6a161339073bfa306c0bccd";
