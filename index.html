@@ -30,9 +30,7 @@
     <div class="container w-50 p-4">
       <div class="card">
         <div class="card-body">
-          <!-- <form class="row g-3 first"> -->
           <form class="row g-3 first searchCity">
-            <!-- <div class="col-md-3"> -->
             <div class="col-md-3">
               <label for="weatherApp" class="form-label weather-app offset-md-3"
                 >Weather App</label
@@ -96,6 +94,14 @@
                 class="form-label clouds-weather offset-md-3"
                 id="date"
                 >Date</label
+              >
+            </div>
+            <div class="col-md-3">
+              <label
+                for="weatherApp"
+                class="form-label clouds-weather offset-md-3"
+                id="description"
+                >Description</label
               >
             </div>
           </form>
@@ -169,13 +175,14 @@
               <label
                 for="weatherApp"
                 class="form-label today-forecast offset-md-1"
-                >Weather forecast for today -
+                >Hourly weather forecast for today -
                 <span id="cityFirst">Kyiv</span></label
               >
             </div>
           </form>
-          <div class="card-group">
-            <div class="card">
+
+          <div class="card-group" id="forecast-hourly">
+            <!-- <div class="card">
               <div class="card-body1">
                 <h5 class="card-title">Morning</h5>
                 <h5 class="card-text">26°</h5>
@@ -185,6 +192,7 @@
                 <small class="text-muted">--</small>
               </div>
             </div>
+
             <div class="card">
               <div class="card-body1">
                 <h5 class="card-title">Afternoon</h5>
@@ -195,6 +203,7 @@
                 <small class="text-muted">17%</small>
               </div>
             </div>
+
             <div class="card">
               <div class="card-body1">
                 <h5 class="card-title">Evening</h5>
@@ -205,6 +214,7 @@
                 <small class="text-muted">--</small>
               </div>
             </div>
+
             <div class="card">
               <div class="card-body1">
                 <h5 class="card-title">Night</h5>
@@ -213,8 +223,8 @@
               </div>
               <div class="card-footer">
                 <small class="text-muted">--</small>
-              </div>
-            </div>
+              </div> 
+            </div> -->
           </div>
         </div>
       </div>
@@ -224,7 +234,7 @@
           <form class="row">
             <div class="col-md-7">
               <label for="weatherApp" class="form-label next-days offset-md-1"
-                >Weather forecast for next days -
+                >Weather forecast for 5 days -
                 <span id="cityThird">Kyiv</span></label
               >
             </div>
