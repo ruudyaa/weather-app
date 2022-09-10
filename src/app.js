@@ -1,4 +1,4 @@
-function formatDate(timestamp) {
+function formatDateAndTime(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   let minutes = date.getMinutes();
@@ -18,7 +18,6 @@ function formatDate(timestamp) {
 function formatDate(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  // let hours = date.getHours();
   let days = [
     "Sunday",
     "Monday",
@@ -147,7 +146,7 @@ function showTemperature(response) {
   document.querySelector("#feelsLike").innerHTML = Math.round(
     response.data.main.feels_like
   );
-  document.querySelector("#date").innerHTML = formatDate(
+  document.querySelector("#date").innerHTML = formatDateAndTime(
     response.data.dt * 1000
   );
 
