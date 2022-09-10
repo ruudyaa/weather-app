@@ -26,9 +26,7 @@ function formatDate(timestamp) {
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  // let forecastHTML = `<div class="row">`;
   let forecastHTML = "";
-  // forecast.forEach(function (forecastDay) {
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML =
@@ -53,7 +51,7 @@ function displayForecast(response) {
                     forecastDay.weather[0].icon
                   }@2x.png"
                   alt=""
-                  width="42"
+                  width="70"
                 />
               </div>
             </div>
@@ -114,9 +112,7 @@ function showTemperature(response) {
 }
 
 function searchCity(city) {
-  // var apiKey = "98837ed6c6a161339073bfa306c0bccd";
   var apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
-  // var apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q="
     .concat(city, "&appid=")
     .concat(apiKey, "&units=metric");
@@ -131,7 +127,6 @@ function showCity(event) {
 
 function currentLocationTemperature(position) {
   let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
-  // let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
@@ -149,35 +144,3 @@ var currentLocationButton = document.querySelector(".location-btn");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Kyiv");
-
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-
-  let temperatureElement = document.querySelector("#temperatureSecond");
-
-  celciusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-
-  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperatureSecond");
-
-  celciusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-
-  temperatureElement.innerHTML = Math.round(celciusTemperature);
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", displayCelsiusTemperature);
-
-let celciusTemperature = null;
-
-// displayForecast();
